@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Group>
+@{ 
+    ViewBag.Title = "IRM Groups";
+    ViewBag.Current = "Groups";
+}
+<div class="row">
+    <div class="col-md-10">
+        <h2>Groups</h2>
+    </div>
+    <div class="col-md-2 text-md-right">
+        @Html.ActionLink("Create", "Create", null, new { @class = "btn btn-outline-primary" })
+    </div>
+</div>
+
+
+<table class="table table-hover table-striped table-bordered" >
+    <thead class="">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GroupNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GroupMembers)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GroupNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GroupMembers)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Add Document", "Create", "Documents", new { id = item.ID }, null) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

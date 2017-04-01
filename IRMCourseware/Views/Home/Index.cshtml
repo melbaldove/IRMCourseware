@@ -1,0 +1,30 @@
+﻿
+@{
+    
+    ViewBag.Title = "IRM Courseware";
+    ViewBag.Current = "Home";
+}
+
+<div>
+    <h1 style="text-align:center">Information Resource Management</h1>
+    <img src="~/image/aljur.jpg" class="img-thumbnail" style="width:100%;height:480px;padding-left:10px;padding-right:10px"/>
+</div>
+<div class="row">
+    @*@for (int i = 0, j = 1, k = 0; i < Model.Count; i++)
+    {
+        if (j == 1)
+        {
+            @Html.Raw("<div class=\"col-md-4\">");
+        }
+        <a href=@Url.Action("Documents/" + Model[i].ID.ToString()) >@("Group " + Model[i].GroupNo + " - " + Model[i].Title)</a><br />
+        k++;
+        j = 0;
+        if(Math.Ceiling(((double)Model.Count / k)) <= k)
+        {
+            @Html.Raw("</div>");
+            k = 0;
+            j = 1;
+        }
+    }*@
+    
+</div>

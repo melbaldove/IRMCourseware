@@ -1,0 +1,21 @@
+﻿@model Document
+@{
+    ViewBag.Title = "RenderReport";
+    string partialView = ViewBag.Partial;
+}
+
+
+
+<div class="row">
+    <div class="col-md-1">
+        @Html.ActionLink("Back", "GroupDocuments", new { id = ViewBag.SelectedID }, new { @class = "btn btn-outline-secondary"})
+    </div>
+    <div class="col-md-10">
+        <h2 class="text-md-center">@Model.Name</h2>
+    </div>
+</div>
+
+<div class="row">
+    @Html.Partial(partialView, Model)
+</div>
+

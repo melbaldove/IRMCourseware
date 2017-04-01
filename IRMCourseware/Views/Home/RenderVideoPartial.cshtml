@@ -1,0 +1,4 @@
+﻿@model Document
+<video controls height="500" width="800" preload="auto" style="margin-right:auto;margin-left:auto;display:block" class="img-thumbnail">
+    <source src="@Url.Content(Model.Directory + Model.FileName + Model.FileType)" type="video/@Model.FileType.Substring(1)" >
+</video>

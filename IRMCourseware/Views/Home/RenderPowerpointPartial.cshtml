@@ -1,0 +1,20 @@
+﻿@model Document
+@{ 
+    int slideCount = ViewBag.SlideCount;
+}
+<ul class="bxslider">
+    @for (int i = 0; i < slideCount; i++)
+    {
+        <li><img style="margin-left:auto;margin-right:auto" src="@Url.Content(Model.Directory + "slide" + i + ".jpg")" /></li>
+    }
+</ul>
+
+@Styles.Render("~/Content/jquery.bxslider.css")
+
+@Scripts.Render("~/bundles/slider")
+<script>
+    $(document).ready(function () {
+   
+        $('.bxslider').bxSlider();
+    });
+</script>

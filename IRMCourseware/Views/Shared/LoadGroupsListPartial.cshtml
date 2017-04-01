@@ -1,0 +1,8 @@
+﻿@model List<Group>
+@foreach (var item in Model)
+{
+  
+   <li id="@(ViewBag.SelectedID == item.ID ? "sidebar-active": "")">
+       <a href=@Url.Action("GroupDocuments/" + item.ID.ToString())>@("Group " + item.GroupNo)</a>
+   </li>
+}
